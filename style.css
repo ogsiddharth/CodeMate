@@ -43,7 +43,7 @@ nav{
     background-color:#F80300;
     color: white;
     justify-content: space-between;
-    padding: 30px 70px;
+    padding: 10px 50px;
     /* gap: 7vw; */
     width: 100%;
     height: 90px;
@@ -497,6 +497,7 @@ footer p.copyright{
     display: flex;
   }
 }
+
 
 
 
