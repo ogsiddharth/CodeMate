@@ -10,16 +10,45 @@ body {
   padding: 0;
   font-size: clamp(16px, 2vw, 24px);
 }
+
+.tooltip {
+  visibility: hidden;
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px 8px;
+  position: absolute;
+  bottom: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+  font-size: 12px;
+}
+.nav2 h5, .nav2 h6 , .nav2 h3 {
+  position: relative;
+  display: inline-block;
+  margin: 0 10px;
+}
+
+/* hover par show hoga */
+.nav2 :hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+}
 nav{
     display: flex;
     align-items: center;
     background-color:#F80300;
     color: white;
     justify-content: space-between;
-    padding: 10px 70px;
+    padding: 30px 70px;
     /* gap: 7vw; */
     width: 100%;
-    height: 70px;
+    height: 90px;
+    
+    
 }
 .nav1 img{
      height: 100px;
@@ -37,37 +66,33 @@ nav{
     display: flex;
     align-items: center;
     
-    /* background-color:#F80300;
-    color: white;
-    justify-content: space-between;
-    padding: 0 20px;
-    width: 100%;
-    height: 100px; */
+    
 }
 .nav2{
     display: flex;
     align-items: center;
-    gap: 20px;
-    /* justify-content: space-between;
-    width: 100%;
-    padding: 0 20px; */
+    gap: 18px;
+    
+}
+.nav2 h3{
+    font-size: 25px;
+    cursor: pointer;
+    
+}
+.nav2 img{
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+    
 }
 .nav2 h6{
     font-size: 18px;
     cursor: pointer;
     display: none;
 }
-/* 
-.logo img{
-     height: 25vh;
-  
-  width: auto;
-  object-fit: contain;
-}
-.item{
-    display: flex;
-    gap: 7vw;
-} */
+
 
 h2, h3, button {
   font-family: 'Poppins', sans-serif;
@@ -85,93 +110,7 @@ button{
 button:focus{
     outline: none;
 }
-/* nav {
-  width: 100%;
-  background-color: #F80300;
-  padding: 10px 20px;
-  position: relative;
-  z-index: 10;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-    height: 100px;
-}
 
-.navTop {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;/
-    
-}
-
-.logo img {
-  height: 25vh;
-  
-  width: auto;
-  object-fit: contain;
-}
-
-.hamburger {
-  font-size: 24px;
-  color: white;
-  cursor: pointer;
-}
-
-.navMenu {
-  display:flex;
-  /* flex-direction: column; */
-  /* gap: 10px;
-  margin-top: 10px;
-}
-
-.navMenu.active {
-  display: flex;
-}
-
-ul{
-    list-style: none;
-    display: flex;
-    gap: 20px;
-}
- ul li a{
-    color: white;
-    font-size: 18px;
-    text-align: center;
-    display: block;
-    padding: 8px 0;
- } */
-
- /* li a {
-  color: rgb(0, 0, 0);
-  font-size: 18px;
-  text-align: center;
-  display: block;
-  padding: 8px 0;
-} */
-
-/* .navSearch {
-  display: flex;
-  gap: 10px;
-  margin-top: 10px;
-}
-
-.navSearch input {
-  flex: 1;
-  padding: 8px 12px;
-  border-radius: 5px;
-  border: none;
-  font-size: 16px;
-}
-
-#nav-btn {
-  background-color: white;
-  color: #F80300;
-  border: none;
-  padding: 8px 12px;
-  border-radius: 5px;
-  cursor: pointer;
-}
- */
 
 
 
@@ -340,10 +279,7 @@ button:hover, .navRight button:hover{
     background-color: #121212;
     color: white;
 }
-/* .course-item button:hover{
-    background-color: #121212;
-    color: white;
-} */
+
 
 .course-item button{
     padding: 8px 12px;
@@ -391,16 +327,13 @@ button:hover, .navRight button:hover{
     scale: 1.05;
 }
 footer{
-    /* width: 100%; */
-    /* height: 150px; */
+    
     background-color: #121212;
 
     color: #fff;
     padding: 40px 60px;
     font-family: 'poppins', sans-serif;
-    /* display: flex; */
-    /* justify-content: center; */
-    /* align-items: center; */
+  
     
 }
 .footer-container{
@@ -518,9 +451,11 @@ footer p.copyright{
   .nav2 h4{
     display: none;
   }
-
+  .nav2 h3{
+    display: none;
+  }
   .nav1 img{
-     height: 50px;
+     height: 100px;
   
   
   object-fit: contain;
@@ -528,84 +463,10 @@ footer p.copyright{
   .nav2 h6{
     display: block;
   }
- 
-  /* .navLeft, .navRight {
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-  } */
-  /* .navSearch {
-    flex-direction: column;
-    width: 50%;
-    position: absolute;
-  }
-  .navLeft{
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    
-  }
-  .logo{
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-  }
-  .hamburger{
-    position: absolute;
-    right: 20px;
-    top: 35px;
-  }
-  .logo img {
-    justify-content: center;
-    max-height: 70px;
-    align-items: flex-start;
-    margin:0 auto;
-
-  }
-
-  /* ul {
-    flex-direction: column;
-    gap: 10px;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-  }
-
-  ul li a {
-    font-size: 18px;
-    text-align: center;
-  } */
-/* 
-  .navRight {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    gap: 8px;
-    
-  }
-  .navRight input {
-    width: 100%;
-    padding: 8px 12px;
-    font-size: 14px;
-    border-radius: 4px;
-    border: none;
-    
-  }
-
-   #nav-btn i{
-    padding: 8px 12px;
-    font-size: 14px;
-    background-color: white;
-    color: #F80300;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-
-  }  */
+ .nav2  i{
+    font-size: 20px;
+ }
+  
 
 
   .headerContent h1,
@@ -636,19 +497,6 @@ footer p.copyright{
     display: flex;
   }
 }
-/* @media (max-width: 768px){
-    footer{
-        
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        
-        height: 200px;
-        padding: 20px;
-        gap: 20px;
-    }
-  
-    
-} */
+
 
 
